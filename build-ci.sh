@@ -26,7 +26,7 @@ echo "PinLayoutSample"                 &&
 echo "===============================" &&
 time xcodebuild build -workspace PinLayout.xcworkspace -scheme PinLayoutSample -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \
   -destination "platform=iOS Simulator,name=iPhone 8 Plus,OS=12.0" \
-  -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.2'\
+  -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4'\
  | xcpretty &&
 
 echo "===============================" &&
@@ -35,7 +35,7 @@ echo "===============================" &&
 time xcodebuild build test -workspace PinLayout.xcworkspace -scheme PinLayout-iOS -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \
   -destination 'platform=iOS Simulator,name=iPhone 8 Plus,OS=12.0' \
   -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4' \
-  -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.2'\
+  -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4'\
   | xcpretty &&
     
 
@@ -73,7 +73,7 @@ echo "===============================" &&
 cd TestProjects/cocoapods/macos &&
 rm -rf $DERIVED_DATA &&
 pod install &&
-time xcodebuild clean build -workspace PinLayout-macOS.xcworkspace -scheme PinLayout-macOS -sdk macosx10.13 -derivedDataPath $DERIVED_DATA \
+time xcodebuild clean build -workspace PinLayout-macOS.xcworkspace -scheme PinLayout-macOS -sdk macosx10.14 -derivedDataPath $DERIVED_DATA \
   | xcpretty &&
 cd ../../.. 
 
@@ -105,6 +105,12 @@ time xcodebuild clean build -project PinLayout-Carthage-iOS.xcodeproj -scheme Pi
 cd ../../.. 
 
 
+echo "===============================" &&
+echo " Pod lib lint"    &&
+echo "===============================" &&
+time pod lib lint --allow-warnings
+
+
 # echo "==========================================" &&
 # echo " Swift Package Manager: iOS Empty project " &&
 # echo "==========================================" &&
@@ -119,4 +125,4 @@ cd ../../..
 # cd ../../.. 
 # 
 # #OTHER_SWIFT_FLAGS='-Xfrontend -debug-time-function-bodies'
-# xcodebuild clean test -workspace PinLayout.xcworkspace -scheme PinLayout-macOS -derivedDataPath $DERIVED_DATA  -sdk macosx10.13 &&
+# xcodebuild clean test -workspace PinLayout.xcworkspace -scheme PinLayout-macOS -derivedDataPath $DERIVED_DATA  -sdk macosx10.14 &&
