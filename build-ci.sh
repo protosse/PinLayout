@@ -24,7 +24,7 @@ Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
 echo "===============================" &&
 echo "PinLayoutSample"                 &&
 echo "===============================" &&
-xcodebuild -workspace "PinLayout.xcworkspace" -scheme "PinLayoutSample" build clean -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \ \
+xcodebuild build -workspace "PinLayout.xcworkspace" -scheme "PinLayoutSample" -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \ \
     -destination "platform=iOS Simulator,name=iPhone 8 Plus,OS=12.0" \
    | xcpretty &&
 
