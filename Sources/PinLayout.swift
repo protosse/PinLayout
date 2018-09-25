@@ -300,10 +300,10 @@ public class PinLayout<View: Layoutable> {
      */
     @discardableResult
     public func all(_ margin: CGFloat = 0) -> PinLayout {
-        top(margin,  { "all(\(margin.optionnalDescription)) top coordinate" })
-        bottom(margin,  { "all(\(margin.optionnalDescription)) bottom coordinate" })
-        left(margin,  { "all(\(margin.optionnalDescription)) left coordinate" })
-        right(margin,  { "all(\(margin.optionnalDescription)) right coordinate" })
+        top(margin, { "all(\(margin.optionnalDescription)) top coordinate" })
+        bottom(margin, { "all(\(margin.optionnalDescription)) bottom coordinate" })
+        left(margin, { "all(\(margin.optionnalDescription)) left coordinate" })
+        right(margin, { "all(\(margin.optionnalDescription)) right coordinate" })
         return self
     }
 
@@ -314,10 +314,10 @@ public class PinLayout<View: Layoutable> {
      */
     @discardableResult
     public func all(_ insets: PEdgeInsets) -> PinLayout {
-        top(insets.top,  { "all(\(insets)) top coordinate" })
-        bottom(insets.bottom,  { "all(\(insets)) bottom coordinate" })
-        left(insets.left,  { "all(\(insets)) left coordinate" })
-        right(insets.right,  { "all(\(insets)) right coordinate" })
+        top(insets.top, { "all(\(insets)) top coordinate" })
+        bottom(insets.bottom, { "all(\(insets)) bottom coordinate" })
+        left(insets.left, { "all(\(insets)) left coordinate" })
+        right(insets.right, { "all(\(insets)) right coordinate" })
         return self
     }
 
