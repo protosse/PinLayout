@@ -24,11 +24,11 @@ platform :ios do
   lane :build do
 #    install
 
-    swiftlint(
-      mode: :lint, 
-      config_file: ".swiftlint.yml",
-      executable: "Pods/SwiftLint/swiftlint"
-    )
+#    swiftlint(
+#      mode: :lint, 
+#      config_file: ".swiftlint.yml",
+#      executable: "Pods/SwiftLint/swiftlint"
+#    )
 
 #    xcodebuild(
 #      project: "PinLayout.xcodeproj",
@@ -76,8 +76,8 @@ platform :ios do
   end
 
   lane :travis do
-    build
-    tests
+    #build
+    #tests
     pod_lib_lint(allow_warnings: true, verbose: false)
   end
 end

@@ -5,11 +5,10 @@ set -o pipefail &&
 
 rm -rf $DERIVED_DATA &&
 
-echo "===============================" &&
-echo "fastlane iOS travis"             &&
-echo "===============================" &&
-time  bundle exec fastlane ios travis  && 
-
+#echo "===============================" &&
+#echo "fastlane iOS travis"             &&
+#echo "===============================" &&
+#time  bundle exec fastlane ios travis  && 
 
 # echo "===============================" &&
 # echo "fastlane macOS travis"           &&
