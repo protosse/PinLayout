@@ -24,14 +24,14 @@ Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
 echo "===============================" &&
 echo "PinLayoutSample"                 &&
 echo "===============================" &&
-xcodebuild build -workspace "PinLayout.xcworkspace" -scheme "PinLayoutSample" -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \ \
+time xcodebuild build -workspace PinLayout.xcworkspace -scheme PinLayoutSample -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \
     -destination "platform=iOS Simulator,name=iPhone 8 Plus,OS=12.0" \
    | xcpretty &&
 
 echo "===============================" &&
 echo "iOS unit test"                   &&
 echo "===============================" &&
-time  xcodebuild build test -workspace PinLayout.xcworkspace -scheme PinLayout-iOS -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \
+time xcodebuild build test -workspace PinLayout.xcworkspace -scheme PinLayout-iOS -derivedDataPath $DERIVED_DATA -sdk iphonesimulator12.0 \
    -destination 'platform=iOS Simulator,name=iPhone 8 Plus,OS=12.0' \
    -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4' \
    -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.2'\
@@ -41,7 +41,7 @@ time  xcodebuild build test -workspace PinLayout.xcworkspace -scheme PinLayout-i
 echo "===============================" &&
 echo "tvOS unit test"                   &&
 echo "===============================" &&
-time  xcodebuild build test -workspace PinLayout.xcworkspace -scheme PinLayout-tvOS -derivedDataPath $DERIVED_DATA -sdk appletvsimulator11.4 \
+time xcodebuild build test -workspace PinLayout.xcworkspace -scheme PinLayout-tvOS -derivedDataPath $DERIVED_DATA -sdk appletvsimulator11.4 \
    -destination 'platform=tvOS Simulator,name=Apple TV 4K,OS=11.4' \
    -destination 'platform=tvOS Simulator,name=Apple TV 4K,OS=12.0' \
    | xcpretty 

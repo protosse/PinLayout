@@ -1158,7 +1158,7 @@ public class PinLayout<View: Layoutable> {
      */
     @discardableResult
     public func margin(_ vertical: Percent, _ horizontal: Percent) -> PinLayout {
-        func context() -> String { return "margin(vertical: \(vertical.description), horizontal: \(horizontal.description)"}
+        func context() -> String { return "margin(vertical: \(vertical.description), horizontal: \(horizontal.description)" }
         return marginVertical(vertical, context).marginHorizontal(horizontal, context)
     }
 
@@ -1179,7 +1179,7 @@ public class PinLayout<View: Layoutable> {
      */
     @discardableResult
     public func margin(_ top: Percent, _ horizontal: Percent, _ bottom: Percent) -> PinLayout {
-        func context() -> String { return "margin(top: \(top.description), horizontal: \(horizontal.description), bottom: \(bottom.description)"}
+        func context() -> String { return "margin(top: \(top.description), horizontal: \(horizontal.description), bottom: \(bottom.description)" }
         return marginTop(top, context).marginHorizontal(horizontal, context).marginBottom(bottom, context)
     }
 
@@ -1229,4 +1229,3 @@ extension PinLayout {
         }
     }
 }
-
