@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.license       = "MIT license"
   spec.author        = { "Luc Dion" => "luc_dion@yahoo.com" }
   spec.source        = { :git => "https://github.com/layoutBox/PinLayout.git", :tag => "#{spec.version}" }
-  spec.source_files  = "Sources/**/*.swift"
+  spec.source_files  = "Sources/**/*.swift", "Sources/ObjectiveC/*.{h,m}"
   spec.swift_versions = ['4.2', '5.0']
 
   spec.ios.deployment_target  = '8.0'

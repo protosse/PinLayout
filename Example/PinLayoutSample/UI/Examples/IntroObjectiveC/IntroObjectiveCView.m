@@ -19,6 +19,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IntroObjectiveCView.h"
+#import <PinLayout/PinLayout-Objc.h>
 @import PinLayout;
 
 
@@ -72,6 +73,8 @@
     [[[[segmented.pinObjc rightOf:logo aligned:VerticalAlignTop] rightWithInsets:safeArea] marginHorizontal:margin] layout];
     [[[[[[textLabel.pinObjc belowOf:segmented aligned:HorizontalAlignLeft] widthOf:segmented] pinEdges] marginTop:margin] sizeToFit:FitWidth] layout];
     [[[[[separatorView.pinObjc belowOfViews:@[logo, textLabel] aligned:HorizontalAlignLeft] rightTo:segmented.edge.right] height:1] marginTop:margin] layout];
+    
+    [logo.pinObj.left(100) layout];
 }
 
 - (void) setLayoutGuidesTop:(CGFloat)top {
